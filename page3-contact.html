@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ballon Company - Contact Us</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>" />
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      color: #333333;
+    }
+
+    /* ========================
+       LOGO
+    ======================== */
+    .logo {
+      background-color: #b35a00;
+      color: #fff8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* ========================
+       NAVIGATION BAR
+    ======================== */
+    nav {
+      background-color: #cc6600;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 17px;
+    }
+
+    nav a:hover {
+  background-color: #a04000;
+  
+}
+
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #ffe0b2;
+    }
+
+    /* ========================
+       PAGE BANNER
+    ======================== */
+    .page-banner {
+      background-color: #e07820;
+      color: #fff8f0;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .page-banner h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .page-banner p {
+      font-size: 18px;
+    }
+
+    /* ========================
+       GENERAL SECTION STYLE
+    ======================== */
+    .section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+    }
+
+    .section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.7;
+    }
+
+    /* ========================
+       CONTACT INFO BOXES
+       Two boxes side by side:
+       left = contact details
+       right = opening hours
+    ======================== */
+    .two-columns {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .info-box {
+      background-color: #fff0dc;
+      border: 2px solid #e09050;
+      border-radius: 8px;
+      padding: 24px;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .info-box h3 {
+      color: #b35a00;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .info-box p {
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    /* ========================
+       BOOKING FORM
+    ======================== */
+    .booking-form label {
+      display: block;
+      font-weight: bold;
+      color: #b35a00;
+      margin-bottom: 5px;
+      margin-top: 16px;
+      font-size: 15px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #e09050;
+      border-radius: 5px;
+      background-color: #fffaf5;
+    }
+
+    /* Make the form fields a nice size */
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      outline: 2px solid #cc6600;
+      background-color: #fff8f0;
+    }
+
+    .booking-form button {
+      margin-top: 22px;
+      background-color: #cc6600;
+      color: white;
+      padding: 14px 28px;
+      font-size: 17px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .booking-form button:hover {
+      background-color: #b35a00;
+    }
+
+    /* ========================
+       TABLE - used for
+       environmental info
+    ======================== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th {
+      background-color: #cc6600;
+      color: white;
+      padding: 11px 14px;
+      text-align: left;
+    }
+
+    table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f0d5b0;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #fff0dc;
+    }
+
+    /* ========================
+       MAP SECTION
+    ======================== */
+    .map-section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+    }
+
+    .map-section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .map-section p {
+      font-size: 16px;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    footer {
+      background-color: #b35a00;
+      color: #ffe0b2;
+      text-align: center;
+      padding: 30px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =====================
+       LOGO
+  ===================== -->
+  <div class="logo">
+    BALLON COMPANY
+  </div>
+
+  <!-- =====================
+       NAVIGATION
+  ===================== -->
+  <nav>
+    <a href="page1-home.html">Home</a>
+    <a href="page2-flights.html">Our Flights</a>
+    <a href="page3-contact.html" class="active">Contact Us</a>
+  </nav>
+
+  <!-- =====================
+       PAGE BANNER
+  ===================== -->
+  <div class="page-banner">
+    <h1>Contact Us</h1>
+    <p>Get in touch or book your flight below</p>
+  </div>
+
+  <!-- =====================
+       CONTACT DETAILS
+       AND OPENING HOURS
+  ===================== -->
+  <div class="section">
+    <h2>Get In Touch</h2>
+    <p>We would love to hear from you. Here is how to reach us:</p>
+
+    <div class="two-columns">
+
+      <!-- Left box: contact details -->
+      <div class="info-box">
+        <h3>Contact Details</h3>
+        <p><strong>Phone:</strong> +353 64 123 4567</p>
+        <p><strong>Email:</strong> fly@balloncompany.ie</p>
+        <p><strong>Address:</strong> Ballon Company HQ,<br/>Killarney, County Kerry,<br/>Ireland</p>
+      </div>
+
+      <!-- Right box: opening hours -->
+      <div class="info-box">
+        <h3>Opening Hours</h3>
+        <p><strong>Office:</strong> 8:00 AM to 8:00 PM, every day</p>
+        <p><strong>Flights:</strong> April to October only</p>
+        <p><strong>Season:</strong> Flights depend on good weather</p>
+        <p><strong>Phone lines</strong> are open daily from 8am</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================
+       BOOKING FORM
+  ===================== -->
+  <div class="section">
+    <h2>Book a Flight</h2>
+    <p>Fill in the form below and we will contact you to confirm your booking. All fields are important!</p>
+
+    <div class="booking-form">
+
+      <!-- Name -->
+      <label>Your Full Name:</label>
+      <input type="text" placeholder="e.g. John Murphy" />
+
+      <!-- Email -->
+      <label>Your Email Address:</label>
+      <input type="email" placeholder="e.g. john@email.com" />
+
+      <!-- Phone -->
+      <label>Your Phone Number:</label>
+      <input type="tel" placeholder="e.g. 087 123 4567" />
+
+      <!-- Flight choice -->
+      <label>Which Flight Would You Like?</label>
+      <select>
+        <option>-- Please choose a flight --</option>
+        <option>Sunrise Flight - 149 euro per person</option>
+        <option>Champagne Tour - 249 euro per person</option>
+        <option>Private Charter - 599 euro</option>
+      </select>
+
+      <!-- Date -->
+      <label>What Date Would You Like?</label>
+      <input type="date" />
+
+      <!-- Number of people -->
+      <label>How Many People Are Coming?</label>
+      <input type="number" placeholder="e.g. 2" min="1" max="12" />
+
+      <!-- Special requests -->
+      <label>Any Special Requests or Information?</label>
+      <textarea rows="5" placeholder="e.g. It is our honeymoon. One passenger uses a walking stick. We would like the sunrise slot."></textarea>
+
+      <!-- Submit button -->
+      <button>Send My Booking Request</button>
+
+    </div>
+  </div>
+
+  <!-- =====================
+       ENVIRONMENTAL INFO
+       (Do birds get hurt etc)
+  ===================== -->
+  <div class="section">
+    <h2>Environment and Safety</h2>
+    <p>We take care of Ireland's nature on every single flight. Here are some common questions about our impact on the environment:</p>
+
+    <table>
+      <tr>
+        <th>Question</th>
+        <th>Our Answer</th>
+      </tr>
+      <tr>
+        <td>Do birds get hurt?</td>
+        <td>No. Balloons are very quiet. Birds fly away naturally. Zero incidents in 20 years.</td>
+      </tr>
+      <tr>
+        <td>Are balloons polluting?</td>
+        <td>Very low emissions. We use clean propane burners and offset our carbon footprint.</td>
+      </tr>
+      <tr>
+        <td>Do we disturb wildlife?</td>
+        <td>No. Our pilots avoid nesting areas and follow wildlife-safe routes at all times.</td>
+      </tr>
+      <tr>
+        <td>Is landing damaging?</td>
+        <td>Landing areas are chosen carefully. We always get landowner permission first.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- =====================
+       MAP
+  ===================== -->
+  <div class="map-section">
+    <h2>Find Us on the Map</h2>
+    <p>We are based in Killarney, County Kerry. We also fly from locations across Ireland.</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39997.17!2d-9.5295!3d52.0599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x484504f0c33d52c1%3A0xa00c7a9973171a0!2sKillarney%2C%20Co.%20Kerry%2C%20Ireland!5e0!3m2!1sen!2sie!4v1"
+      width="100%"
+      height="380"
+      style="border: 3px solid #cc6600; border-radius: 8px;"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- =====================
+       AWARDS AND RECOGNITION
+  ===================== -->
+  <div class="section">
+    <h2>Our Awards and Recognition</h2>
+    <p>We are proud of what we have achieved. Here is a list of our awards and certifications:</p>
+    <br/>
+
+    <table>
+      <tr>
+        <th>Award or Certification</th>
+        <th>Year</th>
+        <th>Given By</th>
+      </tr>
+      <tr>
+        <td>Best Outdoor Experience</td>
+        <td>2023</td>
+        <td>Irish Tourism Awards</td>
+      </tr>
+      <tr>
+        <td>Travellers Choice Award</td>
+        <td>2022 and 2023</td>
+        <td>TripAdvisor</td>
+      </tr>
+      <tr>
+        <td>Green Tourism Gold Award</td>
+        <td>2021</td>
+        <td>Green Tourism Ireland</td>
+      </tr>
+      <tr>
+        <td>Approved Tourism Activity</td>
+        <td>Since 2006</td>
+        <td>Failte Ireland</td>
+      </tr>
+      <tr>
+        <td>Commercial Operator Certificate</td>
+        <td>Since 2008</td>
+        <td>Irish Aviation Authority</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer>
+    <p>
+      <a href="page1-home.html">Home</a>
+      <a href="page2-flights.html">Our Flights</a>
+      <a href="page3-contact.html">Contact Us</a>
+    </p>
+    <br/>
+    <p>Phone: +353 64 123 4567</p>
+    <p>Email: fly@balloncompany.ie</p>
+    <p>Location: Killarney, County Kerry, Ireland</p>
+    <p>Open every day: 8am to 8pm</p>
+    <br/>
+    <p>2024 Ballon Company Ireland — IAA Licensed | Fully Insured | Eco Friendly</p>
+  </footer>
+
+</body>
+</html>

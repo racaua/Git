@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ballon Company - Our Flights</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>" />
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      color: #333333;
+    }
+
+    /* ========================
+       LOGO
+    ======================== */
+    .logo {
+      background-color: #b35a00;
+      color: #fff8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* ========================
+       NAVIGATION BAR
+    ======================== */
+    nav {
+      background-color: #cc6600;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 17px;
+    }
+
+    nav a:hover {
+  background-color: #a04000;
+  
+}
+
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #ffe0b2;
+    }
+
+    /* ========================
+       PAGE BANNER
+       A smaller hero for
+       inner pages
+    ======================== */
+    .page-banner {
+      background-color: #e07820;
+      color: #fff8f0;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .page-banner h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .page-banner p {
+      font-size: 18px;
+    }
+
+    /* ========================
+       GENERAL SECTION STYLE
+    ======================== */
+    .section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+    }
+
+    .section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.7;
+    }
+
+    /* ========================
+       FLIGHT CARDS
+    ======================== */
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      background-color: #fffaf5;
+      border: 2px solid #e09050;
+      border-radius: 8px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #b35a00;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 10px;
+    }
+
+    .card .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #cc6600;
+      margin-bottom: 14px;
+    }
+
+    .card a {
+      background-color: #cc6600;
+      color: white;
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .card a:hover {
+      background-color: #b35a00;
+    }
+
+    /* ========================
+       TABLE - SCHEDULE
+    ======================== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th {
+      background-color: #cc6600;
+      color: white;
+      padding: 11px 14px;
+      text-align: left;
+    }
+
+    table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f0d5b0;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #fff0dc;
+    }
+
+    /* ========================
+       SPECIAL OFFER BOXES
+    ======================== */
+    .boxes {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .offer-box {
+      background-color: #cc6600;
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .offer-box h3 {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .offer-box p {
+      font-size: 13px;
+      color: #ffe0b2;
+    }
+
+    .offer-box .tag {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #fff8f0;
+      color: #b35a00;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* ========================
+       FAQ ACCORDION
+       CSS only - no JavaScript!
+
+       HOW IT WORKS:
+       1. A hidden checkbox sits
+          behind each question
+       2. Clicking the label
+          ticks the checkbox
+       3. CSS sees it is checked
+          and shows the answer
+    ======================== */
+
+    .faq-item input {
+      display: none;
+    }
+
+    .faq-item {
+      border: 1px solid #f0d5b0;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background-color: #fffaf5;
+    }
+
+    .faq-item label {
+      display: block;
+      padding: 14px 18px;
+      font-weight: bold;
+      color: #b35a00;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .faq-item label:hover {
+      background-color: #fff0dc;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 18px;
+      font-size: 14px;
+      color: #555555;
+      line-height: 1.7;
+    }
+
+    .faq-item input:checked ~ .faq-answer {
+      max-height: 200px;
+      padding: 0 18px 14px;
+    }
+
+    .faq-item input:checked ~ label {
+      background-color: #fff0dc;
+      border-radius: 6px 6px 0 0;
+    }
+
+    /* ========================
+       AUDIO SECTION
+    ======================== */
+    .audio-section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+      text-align: center;
+    }
+
+    .audio-section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .audio-section p {
+      font-size: 16px;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    footer {
+      background-color: #b35a00;
+      color: #ffe0b2;
+      text-align: center;
+      padding: 30px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =====================
+       LOGO
+  ===================== -->
+  <div class="logo">
+    BALLON COMPANY
+  </div>
+
+  <!-- =====================
+       NAVIGATION
+  ===================== -->
+  <nav>
+    <a href="page1-home.html">Home</a>
+    <a href="page2-flights.html" class="active">Our Flights</a>
+    <a href="page3-contact.html">Contact Us</a>
+  </nav>
+
+  <!-- =====================
+       PAGE BANNER
+  ===================== -->
+  <div class="page-banner">
+    <h1>Our Flights</h1>
+    <p>Choose your perfect balloon experience over Ireland</p>
+  </div>
+
+  <!-- =====================
+       FLIGHT PACKAGES
+  ===================== -->
+  <div class="section">
+    <h2>Our Three Flights</h2>
+    <p>We have three types of flights to choose from. All flights are fully licensed and insured.</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Sunrise Flight</h3>
+        <p>
+          Duration: 60 minutes<br/>
+          Up to 12 people<br/>
+          Departs at 5:30 AM<br/>
+          Minimum age: 8 years<br/>
+          Maximum weight: 130 kg
+        </p>
+        <p class="price">149 euro<br/><small>per person</small></p>
+        <a href="page3-contact.html">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Champagne Tour</h3>
+        <p>
+          Duration: 90 minutes<br/>
+          Up to 8 people<br/>
+          Champagne included<br/>
+          Minimum age: 16 years<br/>
+          Maximum weight: 130 kg
+        </p>
+        <p class="price">249 euro<br/><small>per person</small></p>
+        <a href="page3-contact.html">Book Now</a>
+      </div>
+
+      <div class="card">
+        <h3>Private Charter</h3>
+        <p>
+          Duration: 60 to 120 min<br/>
+          Only 2 to 4 people<br/>
+          Flowers and photos<br/>
+          Great for honeymoons<br/>
+          Senior discount: 10% off
+        </p>
+        <p class="price">599 euro<br/><small>full charter</small></p>
+        <a href="page3-contact.html">Enquire Now</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================
+       WHERE WE FLY
+  ===================== -->
+  <div class="section">
+    <h2>Where We Fly</h2>
+    <p>We fly over some of the most beautiful places in all of Ireland. Here are our most popular routes:</p>
+    <br/>
+
+    <table>
+      <tr>
+        <th>Route</th>
+        <th>County</th>
+        <th>What You Will See</th>
+        <th>Flight Time</th>
+      </tr>
+      <tr>
+        <td>Ring of Kerry</td>
+        <td>Kerry</td>
+        <td>Mountains, lakes and coastline</td>
+        <td>90 minutes</td>
+      </tr>
+      <tr>
+        <td>Wicklow Mountains</td>
+        <td>Wicklow</td>
+        <td>Green valleys and forests</td>
+        <td>75 minutes</td>
+      </tr>
+      <tr>
+        <td>Connemara Coast</td>
+        <td>Galway</td>
+        <td>Wild Atlantic coastline</td>
+        <td>60 minutes</td>
+      </tr>
+      <tr>
+        <td>Cliffs of Moher</td>
+        <td>Clare</td>
+        <td>Dramatic sea cliffs</td>
+        <td>60 minutes</td>
+      </tr>
+      <tr>
+        <td>Boyne Valley</td>
+        <td>Meath</td>
+        <td>Ancient sites and farmland</td>
+        <td>60 minutes</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- =====================
+       DAILY SCHEDULE
+  ===================== -->
+  <div class="section">
+    <h2>Daily Schedule</h2>
+    <p>We fly from April to October. Here are our daily flight times. All times are Irish local time.</p>
+
+    <table>
+      <tr>
+        <th>Flight Slot</th>
+        <th>Departs</th>
+        <th>How Long</th>
+        <th>Days Available</th>
+      </tr>
+      <tr>
+        <td>Sunrise</td>
+        <td>5:30 AM</td>
+        <td>60 to 90 minutes</td>
+        <td>Tuesday to Sunday</td>
+      </tr>
+      <tr>
+        <td>Morning</td>
+        <td>9:00 AM</td>
+        <td>60 minutes</td>
+        <td>Every day</td>
+      </tr>
+      <tr>
+        <td>Midday</td>
+        <td>12:00 PM</td>
+        <td>60 minutes</td>
+        <td>Saturday and Sunday</td>
+      </tr>
+      <tr>
+        <td>Sunset</td>
+        <td>7:00 PM</td>
+        <td>75 to 90 minutes</td>
+        <td>Every day</td>
+      </tr>
+      <tr>
+        <td>Office Open</td>
+        <td>8:00 AM</td>
+        <td>Until 8:00 PM</td>
+        <td>Every day</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- =====================
+       SPECIAL OFFERS
+  ===================== -->
+  <div class="section">
+    <h2>Special Offers</h2>
+    <p>We have something for every occasion. Ask us about these when you book!</p>
+
+    <div class="boxes">
+      <div class="offer-box">
+        <h3>Honeymoon</h3>
+        <p>Propose 2,000 ft above Ireland!</p>
+        <span class="tag">Most Romantic</span>
+      </div>
+      <div class="offer-box">
+        <h3>Birthdays</h3>
+        <p>Celebrate a special birthday in the sky!</p>
+        <span class="tag">Group Discounts</span>
+      </div>
+      <div class="offer-box">
+        <h3>Senior 65+</h3>
+        <p>10% off for passengers aged 65 and over.</p>
+        <span class="tag">10% Off</span>
+      </div>
+      <div class="offer-box">
+        <h3>Corporate</h3>
+        <p>Team building above the clouds of Ireland.</p>
+        <span class="tag">Bespoke</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================
+       FAQ ACCORDION
+       CSS only - no JavaScript
+  ===================== -->
+  <div class="section">
+    <h2>Questions and Answers</h2>
+    <p>Click any question to see the answer.</p>
+    <br/>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q1" />
+      <label for="q1">Can I jump or freefall from the balloon?</label>
+      <div class="faq-answer">
+        No. All passengers stay safely inside the basket at all times. Our flights are relaxing and fully controlled. We fly at between 500 and 2,000 feet above the ground.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q2" />
+      <label for="q2">Are there age or weight limits?</label>
+      <div class="faq-answer">
+        The minimum age is 8 years old for the Sunrise Flight and 16 for the Champagne Tour. The maximum weight is 130 kg per person. You must be able to step in and out of the basket yourself.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q3" />
+      <label for="q3">Do birds get hurt by the balloon?</label>
+      <div class="faq-answer">
+        No. Hot air balloons are very quiet and gentle. Birds simply fly away naturally. Our pilots follow safe wildlife routes and we have had zero bird incidents in 20 years of flying.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q4" />
+      <label for="q4">What time of year do you fly?</label>
+      <div class="faq-answer">
+        We fly from April through to October. Flights need calm wind and good visibility. If your flight is cancelled due to bad weather, you will get a full refund or a free new booking.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q5" />
+      <label for="q5">Is there a discount for older passengers?</label>
+      <div class="faq-answer">
+        Yes! Passengers aged 65 and over get 10% off all flights. Just tell us when you are booking and we will apply the discount automatically.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q6" />
+      <label for="q6">Are you licensed and insured?</label>
+      <div class="faq-answer">
+        Yes, fully. We hold a Commercial Air Transport Operator Certificate from the Irish Aviation Authority. All our pilots have commercial balloon licences. We carry full public liability and passenger insurance on every single flight.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <input type="checkbox" id="q7" />
+      <label for="q7">What happens if weather is bad?</label>
+      <div class="faq-answer">
+        We check the weather every morning before each flight. Safety always comes first. If we have to cancel, we will contact you straight away and offer a full refund or a free rebooking on a new date.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =====================
+       AUDIO PLAYER
+  ===================== -->
+  <div class="audio-section">
+    <h2>Listen to the Sound of a Balloon</h2>
+    <p>Press play to hear what it sounds like up in the sky.</p>
+    <audio controls>
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      Your browser cannot play this audio file.
+    </audio>
+  </div>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer>
+    <p>
+      <a href="page1-home.html">Home</a>
+      <a href="page2-flights.html">Our Flights</a>
+      <a href="page3-contact.html">Contact Us</a>
+    </p>
+    <br/>
+    <p>Phone: +353 64 123 4567</p>
+    <p>Email: fly@balloncompany.ie</p>
+    <p>Location: Killarney, County Kerry, Ireland</p>
+    <p>Open every day: 8am to 8pm</p>
+    <br/>
+    <p>2024 Ballon Company Ireland — IAA Licensed | Fully Insured | Eco Friendly</p>
+  </footer>
+
+</body>
+</html>

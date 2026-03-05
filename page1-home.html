@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ballon Company - Home</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>" />
+
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      color: #333333;
+    }
+
+    /* ========================
+       LOGO
+    ======================== */
+    .logo {
+      background-color: #b35a00;
+      color: #fff8f0;
+      text-align: center;
+      padding: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* ========================
+       NAVIGATION BAR
+       Links go to all 3 pages
+    ======================== */
+    nav {
+      background-color: #cc6600;
+      padding: 14px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 17px;
+    }
+
+    nav a:hover {
+  background-color: #a04000;
+  
+}
+
+    /* This highlights the current page link */
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+      color: #ffe0b2;
+    }
+
+    /* ========================
+       HERO SECTION
+    ======================== */
+    .hero {
+      background-color: #e07820;
+      color: #fff8f0;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 28px;
+    }
+
+    .hero a {
+      background-color: #fff8f0;
+      color: #b35a00;
+      padding: 14px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .hero a:hover {
+      background-color: #ffe0b2;
+    }
+
+    /* ========================
+       GENERAL SECTION STYLE
+    ======================== */
+    .section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+    }
+
+    .section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 16px;
+      color: #555555;
+      line-height: 1.7;
+    }
+
+    /* ========================
+       INFO BOXES
+    ======================== */
+    .boxes {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .box {
+      background-color: #fff0dc;
+      border: 2px solid #e09050;
+      border-radius: 8px;
+      padding: 20px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .box p {
+      font-size: 14px;
+      color: #555555;
+    }
+
+    /* ========================
+       TIMELINE - HISTORY
+    ======================== */
+    .timeline {
+      margin-top: 20px;
+      padding-left: 30px;
+      border-left: 4px solid #cc6600;
+    }
+
+    .timeline-item {
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    /* The dot on the line */
+    .timeline-item::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background-color: #e07820;
+      border-radius: 50%;
+      position: absolute;
+      left: -39px;
+      top: 4px;
+    }
+
+    .timeline-item .year {
+      font-size: 20px;
+      font-weight: bold;
+      color: #cc6600;
+    }
+
+    .timeline-item h3 {
+      color: #b35a00;
+      margin: 4px 0;
+    }
+
+    .timeline-item p {
+      font-size: 14px;
+      color: #666666;
+    }
+
+    /* ========================
+       TESTIMONIAL CARDS
+    ======================== */
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .testi-card {
+      background-color: #fff8f0;
+      border: 1px solid #e09050;
+      border-radius: 8px;
+      padding: 20px;
+      width: 220px;
+    }
+
+    .testi-card .stars {
+      color: #e07820;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .container { 
+  display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+
+  .box { background-color: white; border: 2px solid #edbb99; border-radius: 12px; width: 310px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+   
+
+}
+  .testi-card p {
+      font-size: 14px;
+      font-style: italic;
+      color: #555555;
+      margin-bottom: 10px;
+    }
+
+    .testi-card .name {
+      font-weight: bold;
+      font-size: 13px;
+      color: #b35a00;
+    }
+
+    /* ========================
+       VIDEO SECTION
+    ======================== */
+    .video-section {
+      background-color: #fffaf5;
+      padding: 40px 30px;
+      margin: 20px;
+      border-radius: 10px;
+      border: 1px solid #f0d5b0;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      color: #b35a00;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .video-section p {
+      font-size: 16px;
+      color: #555555;
+      margin-bottom: 20px;
+    }
+
+    /* ========================
+       FOOTER
+    ======================== */
+    footer {
+      background-color: #b35a00;
+      color: #ffe0b2;
+      text-align: center;
+      padding: 30px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #fff8f0;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+}
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =====================
+       LOGO
+  ===================== -->
+  <div class="logo">
+    BALLON COMPANY
+  </div>
+  <!-- =====================
+       NAVIGATION
+       "active" = current page
+  ===================== -->
+  <nav>
+    <div class="nav">
+     
+    <a href="page1-home.html" class="active">Home</a>
+    <a href="page2-flights.html">Our Flights</a>
+    <a href="page3-contact.html">Contact Us</a>
+  </nav>
+
+  <!-- =====================
+       HERO
+  ===================== -->
+  <div class="hero">
+    <h1>Rise Above Ireland</h1>
+    <p>Hot air balloon flights over Ireland's most beautiful places.</p>
+    <p>Fully Licensed · Fully Insured · Flying since 2004</p>
+    <a href="page2-flights.html">See Our Flights</a>
+  </div>
+
+  <!-- =====================
+       WHY CHOOSE US
+  ===================== -->
+  <div class="section">
+    <h2>Why Choose Us?</h2>
+    <p>We have been flying passengers safely over Ireland since 2004. We are fully licensed by the Irish Aviation Authority and carry full insurance on every flight. We have carried over 8,500 happy passengers!</p>
+
+    <div class="boxes">
+      <div class="box">
+        <p><strong>IAA Licensed</strong></p>
+        <p>Certified by the Irish Aviation Authority</p>
+      </div>
+      <div class="box">
+        <p><strong>Fully Insured</strong></p>
+        <p>Full insurance on every single flight</p>
+      </div>
+      <div class="box">
+        <p><strong>8 Colours</strong></p>
+        <p>Pick your favourite balloon colour</p>
+      </div>
+      <div class="box">
+        <p><strong>Eco Friendly</strong></p>
+        <p>Low emissions. Birds are never harmed.</p>
+      </div>
+      <div class="box">
+        <p><strong>Award Winning</strong></p>
+        <p>Best Outdoor Experience 2023</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================
+       OUR HISTORY TIMELINE
+  ===================== -->
+  <div class="section">
+    <h2>Our Story</h2>
+    <p>Here is how Ballon Company grew from one balloon to a full Irish fleet:</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="year">2004</div>
+        <h3>We Started in Kerry</h3>
+        <p>Sean O Brien started the company with just one balloon and a big dream.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2008</div>
+        <h3>IAA Licence Received</h3>
+        <p>We got our full commercial licence. The fleet grew to 4 balloons.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2013</div>
+        <h3>Award Won</h3>
+        <p>We won Best Outdoor Experience at the Irish Tourism Awards.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2019</div>
+        <h3>Green Flying Programme</h3>
+        <p>We started our eco programme using low-emission burners and wildlife-safe routes.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="year">2024</div>
+        <h3>12 Balloons All Over Ireland</h3>
+        <p>Now flying across 6 counties with a fleet of 12 balloons and over 8,500 happy passengers.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =====================
+       TESTIMONIALS
+  ===================== -->
+  <div class="section">
+    <center><h2>What Our Passengers Say</h2>
+    <p>Real reviews from real people who flew with us!</p>
+</center>
+    <div class="cards">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Absolutely amazing over the Ring of Kerry at sunrise. The best day of our whole holiday in Ireland!"</p>
+        <div class="name">Sarah M. — Boston, USA</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"We booked the honeymoon charter. Flowers in the basket, champagne on landing. Totally magical!"</p>
+        <div class="name">James and Kate — Dublin, Ireland</div>
+      </div>
+
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I am 72 and was nervous but the team were brilliant. The senior discount was a lovely touch!"</p>
+        <div class="name">Patricia M. — London, UK</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+  
+        <div class="box">
+            <img src="ring-kerry.jpg" alt="Ring of Kerry">
+            <div class="box-content">
+                <h3>The Ring of Kerry</h3>
+                <p>Soar over Killarney National Park and the high mountain peaks.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="rock-cashel.jpg" alt="Rock of Cashel">
+            <div class="box-content">
+                <h3> Rock of Cashel</h3>
+                <p>A giant ancient fortress seen from the clouds.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="river-shannon.jpg" alt="River Shannon">
+            <div class="box-content">
+                <h3>River Shannon</h3>
+                <p>Ireland's longest river glowing under the sunset.</p>
+            </div>
+        </div>
+    </div>
+
+  <!-- =====================
+       VIDEO
+  ===================== -->
+  <div class="video-section">
+    <h2>Watch a Balloon Flight</h2>
+    <p>See what it looks like to fly over Ireland in a hot air balloon.</p>
+    <iframe
+      width="100%"
+      height="400"
+      src="https://www.youtube.com/watch?v=5WABvU1poEg"
+      title="Balloon Flight Ireland"
+      style="border: none; border-radius: 8px;"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- =====================
+       FOOTER
+  ===================== -->
+  <footer>
+    <p>
+      <a href="page1-home.html">Home</a>
+      <a href="page2-flights.html">Our Flights</a>
+      <a href="page3-contact.html">Contact Us</a>
+    </p>
+    <br/>
+    <p>Phone: +353 64 123 4567</p>
+    <p>Email: fly@balloncompany.ie</p>
+    <p>Location: Killarney, County Kerry, Ireland</p>
+    <p>Open every day: 8am to 8pm</p>
+    <br/>
+    <p>2024 Ballon Company Ireland — IAA Licensed | Fully Insured | Eco Friendly</p>
+  </footer>
+
+</body>
+</html>
